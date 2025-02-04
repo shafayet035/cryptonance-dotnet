@@ -80,5 +80,12 @@ namespace cryptonance.screens
             exchange.Show();
             this.Hide();
         }
+
+        private void viewTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Transactions tra = new Transactions();
+            tra.Show();
+            this.Hide();
+        }
     }
 }

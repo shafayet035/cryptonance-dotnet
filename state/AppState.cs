@@ -11,5 +11,7 @@ namespace cryptonance.state
 
         public static List<models.Crypto> Cryptos { get; set; } = new List<models.Crypto>();
 
+        public static List<models.Transaction> Transactions { get; set; } = new List<models.Transaction>();
+
     }
 }

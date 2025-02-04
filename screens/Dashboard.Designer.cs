@@ -34,9 +34,11 @@
             sellToolStripMenuItem = new ToolStripMenuItem();
             sendToolStripMenuItem = new ToolStripMenuItem();
             exchangeToolStripMenuItem = new ToolStripMenuItem();
+            viewTransactionsToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem1 = new ToolStripMenuItem();
+            adminToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             lblBtcBalance = new Label();
             lvlBtcUsd = new Label();
@@ -56,7 +58,6 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            adminToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -67,7 +68,7 @@
             // 
             menuStrip1.AutoSize = false;
             menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, logoutToolStripMenuItem, adminToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, viewTransactionsToolStripMenuItem, logoutToolStripMenuItem, adminToolStripMenuItem });
             menuStrip1.Location = new Point(1, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1071, 36);
@@ -108,6 +109,13 @@
             exchangeToolStripMenuItem.Text = "Exchange";
             exchangeToolStripMenuItem.Click += exchangeToolStripMenuItem_Click;
             // 
+            // viewTransactionsToolStripMenuItem
+            // 
+            viewTransactionsToolStripMenuItem.Name = "viewTransactionsToolStripMenuItem";
+            viewTransactionsToolStripMenuItem.Size = new Size(112, 32);
+            viewTransactionsToolStripMenuItem.Text = "View Transactions";
+            viewTransactionsToolStripMenuItem.Click += viewTransactionsToolStripMenuItem_Click;
+            // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, logoutToolStripMenuItem1 });
@@ -118,16 +126,22 @@
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(180, 22);
+            settingsToolStripMenuItem.Size = new Size(116, 22);
             settingsToolStripMenuItem.Text = "Settings";
             settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem1
             // 
             logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            logoutToolStripMenuItem1.Size = new Size(180, 22);
+            logoutToolStripMenuItem1.Size = new Size(116, 22);
             logoutToolStripMenuItem1.Text = "Logout";
             logoutToolStripMenuItem1.Click += logoutToolStripMenuItem1_Click;
+            // 
+            // adminToolStripMenuItem
+            // 
+            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            adminToolStripMenuItem.Size = new Size(55, 32);
+            adminToolStripMenuItem.Text = "Admin";
             // 
             // panel1
             // 
@@ -312,12 +326,6 @@
             label14.TabIndex = 0;
             label14.Text = "Etherium";
             // 
-            // adminToolStripMenuItem
-            // 
-            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            adminToolStripMenuItem.Size = new Size(55, 32);
-            adminToolStripMenuItem.Text = "Admin";
-            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -374,5 +382,6 @@
         private Label label14;
         private ToolStripMenuItem sellToolStripMenuItem;
         private ToolStripMenuItem adminToolStripMenuItem;
+        private ToolStripMenuItem viewTransactionsToolStripMenuItem;
     }
 }
