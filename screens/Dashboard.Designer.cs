@@ -31,6 +31,7 @@
             menuStrip1 = new MenuStrip();
             dashboardToolStripMenuItem = new ToolStripMenuItem();
             buyToolStripMenuItem = new ToolStripMenuItem();
+            sellToolStripMenuItem = new ToolStripMenuItem();
             sendToolStripMenuItem = new ToolStripMenuItem();
             exchangeToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
@@ -55,7 +56,6 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            sellToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -86,6 +86,13 @@
             buyToolStripMenuItem.Text = "Buy";
             buyToolStripMenuItem.Click += buyToolStripMenuItem_Click;
             // 
+            // sellToolStripMenuItem
+            // 
+            sellToolStripMenuItem.Name = "sellToolStripMenuItem";
+            sellToolStripMenuItem.Size = new Size(37, 32);
+            sellToolStripMenuItem.Text = "Sell";
+            sellToolStripMenuItem.Click += sellToolStripMenuItem_Click;
+            // 
             // sendToolStripMenuItem
             // 
             sendToolStripMenuItem.Name = "sendToolStripMenuItem";
@@ -109,14 +116,16 @@
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(116, 22);
+            settingsToolStripMenuItem.Size = new Size(180, 22);
             settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem1
             // 
             logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            logoutToolStripMenuItem1.Size = new Size(116, 22);
+            logoutToolStripMenuItem1.Size = new Size(180, 22);
             logoutToolStripMenuItem1.Text = "Logout";
+            logoutToolStripMenuItem1.Click += logoutToolStripMenuItem1_Click;
             // 
             // panel1
             // 
@@ -300,13 +309,6 @@
             label14.Size = new Size(55, 15);
             label14.TabIndex = 0;
             label14.Text = "Etherium";
-            // 
-            // sellToolStripMenuItem
-            // 
-            sellToolStripMenuItem.Name = "sellToolStripMenuItem";
-            sellToolStripMenuItem.Size = new Size(37, 32);
-            sellToolStripMenuItem.Text = "Sell";
-            sellToolStripMenuItem.Click += sellToolStripMenuItem_Click;
             // 
             // Dashboard
             // 

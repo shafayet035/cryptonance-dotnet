@@ -57,5 +57,19 @@ namespace cryptonance.screens
             sl.Show();
             this.Hide();
         }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+            this.Hide();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
+        }
     }
 }

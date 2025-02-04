@@ -28,5 +28,15 @@ namespace cryptonance.models
             this.password = password;
         }
 
+        public void UpdateUsername(string username)
+        {
+            this.username = username;
+        }
+
+        public void UpdatePassword(string password)
+        {
+            this.password = password;
+        }
+
     }
 }

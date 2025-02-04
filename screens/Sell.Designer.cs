@@ -78,7 +78,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(512, 168);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(405, 130);
+            dataGridView1.Size = new Size(420, 151);
             dataGridView1.TabIndex = 24;
             // 
             // panel2
@@ -91,15 +91,15 @@
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label11);
             panel2.Controls.Add(label12);
-            panel2.Location = new Point(512, 312);
+            panel2.Location = new Point(512, 341);
             panel2.Name = "panel2";
-            panel2.Size = new Size(405, 170);
+            panel2.Size = new Size(420, 141);
             panel2.TabIndex = 23;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(60, 60);
+            label8.Location = new Point(60, 51);
             label8.Name = "label8";
             label8.Size = new Size(28, 15);
             label8.TabIndex = 13;
@@ -108,7 +108,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(60, 120);
+            label10.Location = new Point(60, 111);
             label10.Name = "label10";
             label10.Size = new Size(28, 15);
             label10.TabIndex = 15;
@@ -117,7 +117,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(23, 23);
+            label6.Location = new Point(23, 14);
             label6.Name = "label6";
             label6.Size = new Size(127, 15);
             label6.TabIndex = 9;
@@ -126,7 +126,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(60, 90);
+            label9.Location = new Point(60, 81);
             label9.Name = "label9";
             label9.Size = new Size(28, 15);
             label9.TabIndex = 14;
@@ -135,7 +135,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(26, 60);
+            label7.Location = new Point(26, 51);
             label7.Name = "label7";
             label7.Size = new Size(26, 15);
             label7.TabIndex = 10;
@@ -144,7 +144,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(26, 90);
+            label11.Location = new Point(26, 81);
             label11.Name = "label11";
             label11.Size = new Size(25, 15);
             label11.TabIndex = 11;
@@ -153,7 +153,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(26, 120);
+            label12.Location = new Point(26, 111);
             label12.Name = "label12";
             label12.Size = new Size(28, 15);
             label12.TabIndex = 12;

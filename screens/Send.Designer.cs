@@ -74,30 +74,35 @@
             dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
             dashboardToolStripMenuItem.Size = new Size(76, 32);
             dashboardToolStripMenuItem.Text = "Dashboard";
+            dashboardToolStripMenuItem.Click += dashboardToolStripMenuItem_Click;
             // 
             // buyToolStripMenuItem
             // 
             buyToolStripMenuItem.Name = "buyToolStripMenuItem";
             buyToolStripMenuItem.Size = new Size(39, 32);
             buyToolStripMenuItem.Text = "Buy";
+            buyToolStripMenuItem.Click += buyToolStripMenuItem_Click;
             // 
             // sellToolStripMenuItem
             // 
             sellToolStripMenuItem.Name = "sellToolStripMenuItem";
             sellToolStripMenuItem.Size = new Size(37, 32);
             sellToolStripMenuItem.Text = "Sell";
+            sellToolStripMenuItem.Click += sellToolStripMenuItem_Click;
             // 
             // sendToolStripMenuItem
             // 
             sendToolStripMenuItem.Name = "sendToolStripMenuItem";
             sendToolStripMenuItem.Size = new Size(45, 32);
             sendToolStripMenuItem.Text = "Send";
+            sendToolStripMenuItem.Click += sendToolStripMenuItem_Click;
             // 
             // exchangeToolStripMenuItem
             // 
             exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
             exchangeToolStripMenuItem.Size = new Size(70, 32);
             exchangeToolStripMenuItem.Text = "Exchange";
+            exchangeToolStripMenuItem.Click += exchangeToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
@@ -109,14 +114,16 @@
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(116, 22);
+            settingsToolStripMenuItem.Size = new Size(180, 22);
             settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem1
             // 
             logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            logoutToolStripMenuItem1.Size = new Size(116, 22);
+            logoutToolStripMenuItem1.Size = new Size(180, 22);
             logoutToolStripMenuItem1.Text = "Logout";
+            logoutToolStripMenuItem1.Click += logoutToolStripMenuItem1_Click;
             // 
             // panel1
             // 
@@ -141,6 +148,7 @@
             btnSend.TabIndex = 6;
             btnSend.Text = "Send";
             btnSend.UseVisualStyleBackColor = true;
+            btnSend.Click += btnSend_Click;
             // 
             // txtAmount
             // 

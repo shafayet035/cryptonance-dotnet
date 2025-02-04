@@ -24,10 +24,13 @@ namespace cryptonance.screens
 
             this.UpdateBalance();
 
+            dataGridView1.Rows.Clear();
+
             dataGridView1.Columns.Add("id", "ID");
             dataGridView1.Columns.Add("name", "Name");
             dataGridView1.Columns.Add("price", "Price");
             dataGridView1.Columns.Add("selling_rate", "Selling Rate");
+
 
             // load AppState.Cryptos to dataGridView
             foreach (var crypto in AppState.Cryptos)

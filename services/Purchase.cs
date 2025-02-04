@@ -12,8 +12,6 @@ namespace cryptonance.services
     {
         static string connectionString = "Data Source=DESKTOP-60OT1H6\\SQLEXPRESS;Initial Catalog=cryptonance;Integrated Security=True";
 
-
-
         public void AddToWalletAndBuyCrypto(models.Crypto crypto, float cryptoAmount, float totalPrice)
         {
             try
@@ -62,8 +60,23 @@ namespace cryptonance.services
             }
         }
 
+        private bool CheckBalance(models.Crypto crypto, float cryptoAmount)
+        {
+            float balance = AppState.Wallet.GetCryptoBalance(crypto.tag);
+            if (balance < cryptoAmount)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public void SaleCrypto(models.Crypto crypto, float cryptoAmount, float totalPrice)
         {
+            if(!CheckBalance(crypto, cryptoAmount))
+            {
+               MessageBox.Show("Insufficient balance");
+                return;
+            }
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
