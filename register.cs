@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using cryptonance.screens;
 using cryptonance.services;
 
 namespace cryptonance
@@ -32,6 +33,9 @@ namespace cryptonance
             if (userRegistered)
             {
                 MessageBox.Show("User registered successfully");
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Hide();
             }
         }
 
@@ -40,7 +44,6 @@ namespace cryptonance
             login lg = new login();
             lg.Show();
             this.Hide();
-            this.ResumeLayout();
         }
     }
 }

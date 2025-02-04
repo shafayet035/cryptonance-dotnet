@@ -8,7 +8,7 @@ namespace cryptonance.models
 {
     internal class User
     {
-        object id { get; set; }
+        public object id { get; set; }
         public string username { get; set; }
         public string email { get; set; }
         public string password { get; set; }

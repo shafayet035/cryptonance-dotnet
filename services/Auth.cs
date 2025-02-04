@@ -39,30 +39,64 @@ namespace cryptonance.services
                 throw e;
             }
         }
+
         public bool Register(models.User user)
         {
             bool userExist = this.CheckIfUserExist(user.email);
-            if(userExist)
+            if (userExist)
             {
-                MessageBox.Show("User already exist");
+                MessageBox.Show("User already exists");
                 return false;
             }
-            Console.WriteLine("Is it working?");
-            try {
+
+            try
+            {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO [user] (email, password, username) VALUES (@email, @password, @username)";
+                    string query = "INSERT INTO [user] (email, password, username) OUTPUT INSERTED.id VALUES (@email, @password, @username)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@username", user.username);
                     command.Parameters.AddWithValue("@email", user.email);
                     command.Parameters.AddWithValue("@password", user.password);
-                    command.ExecuteNonQuery();
+                    var userId = command.ExecuteScalar();
+
+                    if (userId != null)
+                    {
+                        AppState.CurrentUser = new models.User(userId, user.username, user.email, user.password);
+                        AppState.IsUserLoggedIn = true;
+                        this.SeedWallet(userId);
+                    }
                     connection.Close();
 
                     return true;
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        private void SeedWallet(object id)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "INSERT INTO [wallets] (userId, btc, ltc, eth) VALUES (@userId, @btc, @ltc, @eth)";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@userId", id);
+                    command.Parameters.AddWithValue("@btc", 0);
+                    command.Parameters.AddWithValue("@ltc", 0);
+                    command.Parameters.AddWithValue("@eth", 0);
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
+            }
+            catch (Exception e)
+            {
                 throw e;
             }
         }

@@ -1,3 +1,5 @@
+using cryptonance.screens;
+
 namespace cryptonance
 {
     internal static class Program
