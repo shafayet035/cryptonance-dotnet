@@ -56,6 +56,7 @@
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
+            adminToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -66,7 +67,7 @@
             // 
             menuStrip1.AutoSize = false;
             menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, logoutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, logoutToolStripMenuItem, adminToolStripMenuItem });
             menuStrip1.Location = new Point(1, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1071, 36);
@@ -105,6 +106,7 @@
             exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
             exchangeToolStripMenuItem.Size = new Size(70, 32);
             exchangeToolStripMenuItem.Text = "Exchange";
+            exchangeToolStripMenuItem.Click += exchangeToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
@@ -310,6 +312,12 @@
             label14.TabIndex = 0;
             label14.Text = "Etherium";
             // 
+            // adminToolStripMenuItem
+            // 
+            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            adminToolStripMenuItem.Size = new Size(55, 32);
+            adminToolStripMenuItem.Text = "Admin";
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -365,5 +373,6 @@
         private Label label13;
         private Label label14;
         private ToolStripMenuItem sellToolStripMenuItem;
+        private ToolStripMenuItem adminToolStripMenuItem;
     }
 }

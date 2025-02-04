@@ -30,6 +30,8 @@ namespace cryptonance.screens
             lvlBtcUsd.Text = $"${AppState.Wallet.btc * AppState.Cryptos[0].price}";
             lvlLtcUsd.Text = $"${AppState.Wallet.ltc * AppState.Cryptos[1].price}";
             lvlEthUsd.Text = $"${AppState.Wallet.eth * AppState.Cryptos[2].price}";
+
+            adminToolStripMenuItem.Visible = AppState.CurrentUser.IsAdmin();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -69,6 +71,13 @@ namespace cryptonance.screens
         {
             login login = new login();
             login.Show();
+            this.Hide();
+        }
+
+        private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exchange exchange = new Exchange();
+            exchange.Show();
             this.Hide();
         }
     }

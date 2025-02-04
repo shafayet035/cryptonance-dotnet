@@ -54,16 +54,17 @@ namespace cryptonance.services
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    string query = "INSERT INTO [user] (email, password, username) OUTPUT INSERTED.id VALUES (@email, @password, @username)";
+                    string query = "INSERT INTO [user] (email, password, username, role) OUTPUT INSERTED.id VALUES (@email, @password, @username, @role)";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@username", user.username);
                     command.Parameters.AddWithValue("@email", user.email);
                     command.Parameters.AddWithValue("@password", user.password);
+                    command.Parameters.AddWithValue("@role", "normal");
                     var userId = command.ExecuteScalar();
 
                     if (userId != null)
                     {
-                        AppState.CurrentUser = new models.User(userId, user.username, user.email, user.password);
+                        AppState.CurrentUser = new models.User(userId, user.username, user.email, user.password, "normal");
                         AppState.IsUserLoggedIn = true;
                         this.SeedWallet(userId);
                     }
@@ -117,7 +118,7 @@ namespace cryptonance.services
                     {
                         while (reader.Read())
                         {
-                            AppState.CurrentUser = new models.User(reader["id"], reader["username"].ToString(), reader["email"].ToString(), reader["password"].ToString());
+                            AppState.CurrentUser = new models.User(reader["id"], reader["username"].ToString(), reader["email"].ToString(), reader["password"].ToString(), reader["role"].ToString());
                             AppState.IsUserLoggedIn = true;
                         }
                         return true;

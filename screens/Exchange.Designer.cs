@@ -37,7 +37,34 @@
             logoutToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem1 = new ToolStripMenuItem();
+            panel1 = new Panel();
+            ltcbtc = new Label();
+            ltceth = new Label();
+            ethltc = new Label();
+            ethbtc = new Label();
+            btcltc = new Label();
+            btceth = new Label();
+            exchangerate = new Label();
+            exchangeb = new Button();
+            lblExchange = new Label();
+            amount = new Label();
+            to = new Label();
+            from = new Label();
+            tobox = new ComboBox();
+            frombox = new ComboBox();
+            amountbox = new TextBox();
+            label1 = new Label();
+            panel2 = new Panel();
+            label8 = new Label();
+            label10 = new Label();
+            label6 = new Label();
+            label9 = new Label();
+            label7 = new Label();
+            label11 = new Label();
+            label12 = new Label();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -97,6 +124,7 @@
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             settingsToolStripMenuItem.Size = new Size(116, 22);
             settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem1
             // 
@@ -104,17 +132,304 @@
             logoutToolStripMenuItem1.Size = new Size(116, 22);
             logoutToolStripMenuItem1.Text = "Logout";
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Window;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(ltcbtc);
+            panel1.Controls.Add(ltceth);
+            panel1.Controls.Add(ethltc);
+            panel1.Controls.Add(ethbtc);
+            panel1.Controls.Add(btcltc);
+            panel1.Controls.Add(btceth);
+            panel1.Controls.Add(exchangerate);
+            panel1.Location = new Point(31, 247);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(436, 274);
+            panel1.TabIndex = 41;
+            // 
+            // ltcbtc
+            // 
+            ltcbtc.AutoSize = true;
+            ltcbtc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ltcbtc.Location = new Point(36, 211);
+            ltcbtc.Margin = new Padding(4, 0, 4, 0);
+            ltcbtc.Name = "ltcbtc";
+            ltcbtc.Size = new Size(134, 20);
+            ltcbtc.TabIndex = 23;
+            ltcbtc.Text = "1 LTC = 0.14 BTC";
+            // 
+            // ltceth
+            // 
+            ltceth.AutoSize = true;
+            ltceth.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ltceth.Location = new Point(35, 172);
+            ltceth.Margin = new Padding(4, 0, 4, 0);
+            ltceth.Name = "ltceth";
+            ltceth.Size = new Size(135, 20);
+            ltceth.TabIndex = 22;
+            ltceth.Text = "1 LTC = 0.45 ETH";
+            // 
+            // ethltc
+            // 
+            ethltc.AutoSize = true;
+            ethltc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ethltc.Location = new Point(208, 108);
+            ethltc.Margin = new Padding(4, 0, 4, 0);
+            ethltc.Name = "ethltc";
+            ethltc.Size = new Size(135, 20);
+            ethltc.TabIndex = 21;
+            ethltc.Text = "1 ETH = 2.46 LTC";
+            // 
+            // ethbtc
+            // 
+            ethbtc.AutoSize = true;
+            ethbtc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ethbtc.Location = new Point(208, 76);
+            ethbtc.Margin = new Padding(4, 0, 4, 0);
+            ethbtc.Name = "ethbtc";
+            ethbtc.Size = new Size(137, 20);
+            ethbtc.TabIndex = 17;
+            ethbtc.Text = "1 ETH = 0.47 BTC";
+            // 
+            // btcltc
+            // 
+            btcltc.AutoSize = true;
+            btcltc.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btcltc.Location = new Point(33, 112);
+            btcltc.Margin = new Padding(4, 0, 4, 0);
+            btcltc.Name = "btcltc";
+            btcltc.Size = new Size(134, 20);
+            btcltc.TabIndex = 16;
+            btcltc.Text = "1 BTC = 5.78 LTC";
+            // 
+            // btceth
+            // 
+            btceth.AutoSize = true;
+            btceth.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btceth.Location = new Point(33, 78);
+            btceth.Margin = new Padding(4, 0, 4, 0);
+            btceth.Name = "btceth";
+            btceth.Size = new Size(137, 20);
+            btceth.TabIndex = 15;
+            btceth.Text = "1 BTC = 2.36 ETH";
+            // 
+            // exchangerate
+            // 
+            exchangerate.AutoSize = true;
+            exchangerate.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            exchangerate.Location = new Point(164, 21);
+            exchangerate.Margin = new Padding(4, 0, 4, 0);
+            exchangerate.Name = "exchangerate";
+            exchangerate.Size = new Size(120, 16);
+            exchangerate.TabIndex = 14;
+            exchangerate.Text = "Exchange Rates";
+            // 
+            // exchangeb
+            // 
+            exchangeb.BackColor = Color.FromArgb(192, 255, 192);
+            exchangeb.Location = new Point(802, 360);
+            exchangeb.Margin = new Padding(4, 3, 4, 3);
+            exchangeb.Name = "exchangeb";
+            exchangeb.Size = new Size(99, 35);
+            exchangeb.TabIndex = 36;
+            exchangeb.Text = "Exchange";
+            exchangeb.UseVisualStyleBackColor = false;
+            exchangeb.Click += exchangeb_Click;
+            // 
+            // lblExchange
+            // 
+            lblExchange.AutoSize = true;
+            lblExchange.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblExchange.Location = new Point(660, 324);
+            lblExchange.Margin = new Padding(4, 0, 4, 0);
+            lblExchange.Name = "lblExchange";
+            lblExchange.Size = new Size(113, 16);
+            lblExchange.TabIndex = 35;
+            lblExchange.Text = "You will recieve: 0";
+            // 
+            // amount
+            // 
+            amount.AutoSize = true;
+            amount.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            amount.Location = new Point(658, 178);
+            amount.Margin = new Padding(4, 0, 4, 0);
+            amount.Name = "amount";
+            amount.Size = new Size(65, 20);
+            amount.TabIndex = 34;
+            amount.Text = "Amount";
+            // 
+            // to
+            // 
+            to.AutoSize = true;
+            to.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            to.Location = new Point(658, 247);
+            to.Margin = new Padding(4, 0, 4, 0);
+            to.Name = "to";
+            to.Size = new Size(27, 20);
+            to.TabIndex = 33;
+            to.Text = "To";
+            // 
+            // from
+            // 
+            from.AutoSize = true;
+            from.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            from.Location = new Point(658, 113);
+            from.Margin = new Padding(4, 0, 4, 0);
+            from.Name = "from";
+            from.Size = new Size(46, 20);
+            from.TabIndex = 32;
+            from.Text = "From";
+            from.Click += from_Click;
+            // 
+            // tobox
+            // 
+            tobox.FormattingEnabled = true;
+            tobox.Items.AddRange(new object[] { "BTC", "LTC", "ETH" });
+            tobox.Location = new Point(662, 280);
+            tobox.Margin = new Padding(4, 3, 4, 3);
+            tobox.Name = "tobox";
+            tobox.Size = new Size(241, 23);
+            tobox.TabIndex = 31;
+            tobox.SelectedIndexChanged += tobox_SelectedIndexChanged;
+            // 
+            // frombox
+            // 
+            frombox.FormattingEnabled = true;
+            frombox.Items.AddRange(new object[] { "BTC", "LTC", "ETH" });
+            frombox.Location = new Point(660, 143);
+            frombox.Margin = new Padding(4, 3, 4, 3);
+            frombox.Name = "frombox";
+            frombox.Size = new Size(241, 23);
+            frombox.TabIndex = 30;
+            frombox.SelectedIndexChanged += frombox_SelectedIndexChanged;
+            // 
+            // amountbox
+            // 
+            amountbox.Location = new Point(660, 210);
+            amountbox.Margin = new Padding(4, 3, 4, 3);
+            amountbox.Name = "amountbox";
+            amountbox.Size = new Size(241, 23);
+            amountbox.TabIndex = 29;
+            amountbox.TextChanged += amountbox_TextChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(327, 103);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 15);
+            label1.TabIndex = 28;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.Window;
+            panel2.BorderStyle = BorderStyle.FixedSingle;
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label10);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(label9);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label11);
+            panel2.Controls.Add(label12);
+            panel2.Location = new Point(31, 61);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(191, 170);
+            panel2.TabIndex = 42;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(60, 60);
+            label8.Name = "label8";
+            label8.Size = new Size(28, 15);
+            label8.TabIndex = 13;
+            label8.Text = "0.00";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(60, 120);
+            label10.Name = "label10";
+            label10.Size = new Size(28, 15);
+            label10.TabIndex = 15;
+            label10.Text = "0.00";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(23, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 15);
+            label6.TabIndex = 9;
+            label6.Text = "Your'e Current Balance";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(60, 90);
+            label9.Name = "label9";
+            label9.Size = new Size(28, 15);
+            label9.TabIndex = 14;
+            label9.Text = "0.00";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(26, 60);
+            label7.Name = "label7";
+            label7.Size = new Size(26, 15);
+            label7.TabIndex = 10;
+            label7.Text = "BTC";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(26, 90);
+            label11.Name = "label11";
+            label11.Size = new Size(25, 15);
+            label11.TabIndex = 11;
+            label11.Text = "LTC";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(26, 120);
+            label12.Name = "label12";
+            label12.Size = new Size(28, 15);
+            label12.TabIndex = 12;
+            label12.Text = "ETH";
+            // 
             // Exchange
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1072, 610);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(exchangeb);
+            Controls.Add(lblExchange);
+            Controls.Add(amount);
+            Controls.Add(to);
+            Controls.Add(from);
+            Controls.Add(tobox);
+            Controls.Add(frombox);
+            Controls.Add(amountbox);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
             Name = "Exchange";
             Text = "Exchange";
+            Load += Exchange_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -128,5 +443,30 @@
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem1;
+        private Panel panel1;
+        private Label ltcbtc;
+        private Label ltceth;
+        private Label ethltc;
+        private Label ethbtc;
+        private Label btcltc;
+        private Label btceth;
+        private Label exchangerate;
+        private Button exchangeb;
+        private Label lblExchange;
+        private Label amount;
+        private Label to;
+        private Label from;
+        private ComboBox tobox;
+        private ComboBox frombox;
+        private TextBox amountbox;
+        private Label label1;
+        private Panel panel2;
+        private Label label8;
+        private Label label10;
+        private Label label6;
+        private Label label9;
+        private Label label7;
+        private Label label11;
+        private Label label12;
     }
 }
