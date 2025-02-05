@@ -7,22 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using cryptonance.services;
 using cryptonance.state;
 
 namespace cryptonance.screens
 {
-    public partial class Buy : Form
+    public partial class Admin : Form
     {
-        string selectedCrypto;
-        float writtenAmount;
-        public Buy()
+        int selectedCryptoId = -1;
+        int selectedUserId = -1;
+
+        services.Admin admin = new services.Admin();
+        public Admin()
         {
             InitializeComponent();
+
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            this.UpdateBalance();
+            admin.GetAllUsers();
 
+            this.LoadCurrency();
+            this.LoadUsers();
+        }
+
+        private void LoadUsers()
+        {
+            dataGridView2.Rows.Clear();
+
+            dataGridView2.Columns.Add("id", "ID");
+            dataGridView2.Columns.Add("username", "Username");
+            dataGridView2.Columns.Add("email", "Email");
+            dataGridView2.Columns.Add("password", "Password");
+            dataGridView2.Columns.Add("role", "Role");
+
+            foreach (var user in AppState.Users)
+            {
+                dataGridView2.Rows.Add(user.id, user.username, user.email, user.password, user.role);
+            }
+        }
+
+        private void LoadCurrency()
+        {
             dataGridView1.Rows.Clear();
 
             dataGridView1.Columns.Add("id", "ID");
@@ -30,103 +54,76 @@ namespace cryptonance.screens
             dataGridView1.Columns.Add("price", "Price");
             dataGridView1.Columns.Add("selling_rate", "Selling Rate");
 
-            // load AppState.Cryptos to dataGridView
+
             foreach (var crypto in AppState.Cryptos)
             {
                 dataGridView1.Rows.Add(crypto.id, crypto.name, $"${crypto.price} per {crypto.tag.ToUpper()}", $"${crypto.sellingRate} per {crypto.tag.ToUpper()}");
             }
         }
 
-        private void UpdateBalance()
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            label8.Text = AppState.Wallet.btc.ToString();
-            label9.Text = AppState.Wallet.ltc.ToString();
-            label10.Text = AppState.Wallet.eth.ToString();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UpdateTotalAmount()
-        {
-            foreach (var crypto in AppState.Cryptos)
-            {
-                if (crypto.tag.ToUpper() == selectedCrypto)
-                {
-                    if (txtAmount.Text != "")
-                    {
-                        lblTotalAmount.Text = $"${(crypto.price * writtenAmount).ToString()}";
-                    }
-                }
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox1.SelectedIndex >= 0)
-            {
-                this.selectedCrypto = comboBox1.SelectedItem.ToString();
-                this.UpdateTotalAmount();
-            }
-        }
-
-        private void txtAmount_TextChanged(object sender, EventArgs e)
-        {
-            if (txtAmount.Text == "")
+            if (e.RowIndex < 0)
             {
                 return;
             }
-            // check if it is number only
-            if (!float.TryParse(txtAmount.Text, out _))
+
+            selectedCryptoId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+            var selectedCrypto = AppState.Cryptos.Find(crypto => Convert.ToInt32(crypto.id) == selectedCryptoId);
+
+            if (selectedCrypto != null)
             {
-                MessageBox.Show("Please enter a valid number");
-                txtAmount.Text = "";
-                writtenAmount = 0;
-                return;
+                txtBuyingRate.Text = selectedCrypto.price.ToString();
+                txtSellingRate.Text = selectedCrypto.sellingRate.ToString();
             }
-            writtenAmount = Convert.ToSingle(txtAmount.Text);
-            this.UpdateTotalAmount();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (selectedCrypto == null || writtenAmount == 0 || txtCC.Text == "")
+            if (selectedCryptoId < 0 || txtBuyingRate.Text == "" || txtSellingRate.Text == "")
             {
-                MessageBox.Show("All fields are required");
+                MessageBox.Show("Please fill all fields");
                 return;
             }
-            Purchase purchase = new Purchase();
 
-            foreach (var crypto in AppState.Cryptos)
+            admin.UpdateCryptoPrices(selectedCryptoId, Convert.ToSingle(txtBuyingRate.Text), Convert.ToSingle(txtSellingRate.Text));
+            MessageBox.Show("Crypto updated successfully");
+
+        }
+
+      
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
             {
-                if (crypto.tag.ToUpper() == selectedCrypto)
-                {
-                    float totalAmount = crypto.price * writtenAmount;
-                    purchase.AddToWalletAndBuyCrypto(crypto, writtenAmount, totalAmount);
-                    MessageBox.Show("Purchase successful");
-                    this.UpdateBalance();
-
-                    // reset fields
-                    txtAmount.Text = "";
-                    txtCC.Text = "";
-                    lblTotalAmount.Text = "$0";
-                    comboBox1.SelectedIndex = -1;
-
-                    return;
-                }
+                return;
             }
+
+            selectedUserId = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells[0].Value);
+            var selectedUser = AppState.Users.Find(user => Convert.ToInt32(user.id) == selectedUserId);
+            if (selectedUser != null)
+            {
+                txtUsername.Text = selectedUser.username;
+                txtPassword.Text = selectedUser.password;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (selectedUserId < 0 || txtUsername.Text == "" || txtPassword.Text == "")
+            {
+                MessageBox.Show("Please fill all fields");
+                return;
+            }
+
+            admin.UpdateUser(selectedUserId, txtUsername.Text, txtPassword.Text);
+            this.LoadUsers();
+            MessageBox.Show("User updated successfully");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
         }
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)

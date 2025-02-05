@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             btnLogin = new Button();
             txtPassword = new TextBox();
             label3 = new Label();
             txtEmail = new TextBox();
             label2 = new Label();
             label1 = new Label();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
             // 
-            btnLogin.Location = new Point(302, 276);
+            btnLogin.Location = new Point(28, 162);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(75, 23);
             btnLogin.TabIndex = 11;
@@ -48,31 +53,32 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(302, 233);
+            txtPassword.Location = new Point(28, 118);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(197, 23);
+            txtPassword.Size = new Size(249, 23);
             txtPassword.TabIndex = 10;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(302, 215);
+            label3.Location = new Point(25, 100);
             label3.Name = "label3";
             label3.Size = new Size(57, 15);
             label3.TabIndex = 9;
             label3.Text = "Password";
+            label3.Click += label3_Click;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(302, 170);
+            txtEmail.Location = new Point(28, 55);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(197, 23);
+            txtEmail.Size = new Size(249, 23);
             txtEmail.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(302, 152);
+            label2.Location = new Point(25, 37);
             label2.Name = "label2";
             label2.Size = new Size(36, 15);
             label2.TabIndex = 7;
@@ -81,29 +87,52 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(402, 280);
+            label1.Location = new Point(28, 206);
             label1.Name = "label1";
             label1.Size = new Size(160, 15);
             label1.TabIndex = 12;
             label1.Text = "New user? Create an account";
             label1.Click += label1_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Window;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(txtEmail);
+            panel1.Controls.Add(btnLogin);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(txtPassword);
+            panel1.Location = new Point(361, 226);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(311, 262);
+            panel1.TabIndex = 13;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(390, 98);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(249, 103);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 14;
+            pictureBox1.TabStop = false;
+            // 
             // login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(btnLogin);
-            Controls.Add(txtPassword);
-            Controls.Add(label3);
-            Controls.Add(txtEmail);
-            Controls.Add(label2);
+            ClientSize = new Size(1072, 610);
+            Controls.Add(pictureBox1);
+            Controls.Add(panel1);
             Name = "login";
             Text = "Form1";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -114,5 +143,7 @@
         private TextBox txtEmail;
         private Label label2;
         private Label label1;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

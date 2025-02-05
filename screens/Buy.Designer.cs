@@ -34,9 +34,11 @@
             sellToolStripMenuItem = new ToolStripMenuItem();
             sendToolStripMenuItem = new ToolStripMenuItem();
             exchangeToolStripMenuItem = new ToolStripMenuItem();
+            viewTransactionToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem1 = new ToolStripMenuItem();
+            adminToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             lblTotalAmount = new Label();
             label19 = new Label();
@@ -68,7 +70,7 @@
             // 
             menuStrip1.AutoSize = false;
             menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, logoutToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, viewTransactionToolStripMenuItem, logoutToolStripMenuItem, adminToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1072, 36);
@@ -87,6 +89,7 @@
             buyToolStripMenuItem.Name = "buyToolStripMenuItem";
             buyToolStripMenuItem.Size = new Size(39, 32);
             buyToolStripMenuItem.Text = "Buy";
+            buyToolStripMenuItem.Click += buyToolStripMenuItem_Click;
             // 
             // sellToolStripMenuItem
             // 
@@ -100,12 +103,21 @@
             sendToolStripMenuItem.Name = "sendToolStripMenuItem";
             sendToolStripMenuItem.Size = new Size(45, 32);
             sendToolStripMenuItem.Text = "Send";
+            sendToolStripMenuItem.Click += sendToolStripMenuItem_Click;
             // 
             // exchangeToolStripMenuItem
             // 
             exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
             exchangeToolStripMenuItem.Size = new Size(70, 32);
             exchangeToolStripMenuItem.Text = "Exchange";
+            exchangeToolStripMenuItem.Click += exchangeToolStripMenuItem_Click;
+            // 
+            // viewTransactionToolStripMenuItem
+            // 
+            viewTransactionToolStripMenuItem.Name = "viewTransactionToolStripMenuItem";
+            viewTransactionToolStripMenuItem.Size = new Size(107, 32);
+            viewTransactionToolStripMenuItem.Text = "View Transaction";
+            viewTransactionToolStripMenuItem.Click += viewTransactionsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
@@ -117,14 +129,23 @@
             // settingsToolStripMenuItem
             // 
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(116, 22);
+            settingsToolStripMenuItem.Size = new Size(180, 22);
             settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem1
             // 
             logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            logoutToolStripMenuItem1.Size = new Size(116, 22);
+            logoutToolStripMenuItem1.Size = new Size(180, 22);
             logoutToolStripMenuItem1.Text = "Logout";
+            logoutToolStripMenuItem1.Click += logoutToolStripMenuItem1_Click;
+            // 
+            // adminToolStripMenuItem
+            // 
+            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            adminToolStripMenuItem.Size = new Size(55, 32);
+            adminToolStripMenuItem.Text = "Admin";
+            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
             // panel1
             // 
@@ -388,5 +409,7 @@
         private DataGridView dataGridView1;
         private Label label5;
         private ToolStripMenuItem sellToolStripMenuItem;
+        private ToolStripMenuItem viewTransactionToolStripMenuItem;
+        private ToolStripMenuItem adminToolStripMenuItem;
     }
 }

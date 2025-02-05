@@ -86,7 +86,9 @@ namespace cryptonance.screens
 
         private void sendToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Send send = new Send();
+            send.Show();
+            this.Hide();
         }
 
         private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,18 +98,37 @@ namespace cryptonance.screens
             this.Hide();
         }
 
+        private void viewTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Show();
+            this.Hide();
+        }
+
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Settings stg = new Settings();
-            stg.Show();
+            Settings settings = new Settings();
+            settings.Show();
             this.Hide();
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            login lgn = new login();
-            lgn.Show();
+            login login = new login();
+            login.Show();
             this.Hide();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

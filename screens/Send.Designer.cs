@@ -28,15 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            dashboardToolStripMenuItem = new ToolStripMenuItem();
-            buyToolStripMenuItem = new ToolStripMenuItem();
-            sellToolStripMenuItem = new ToolStripMenuItem();
-            sendToolStripMenuItem = new ToolStripMenuItem();
-            exchangeToolStripMenuItem = new ToolStripMenuItem();
-            logoutToolStripMenuItem = new ToolStripMenuItem();
-            settingsToolStripMenuItem = new ToolStripMenuItem();
-            logoutToolStripMenuItem1 = new ToolStripMenuItem();
             panel1 = new Panel();
             btnSend = new Button();
             txtAmount = new TextBox();
@@ -53,80 +44,25 @@
             label9 = new Label();
             label10 = new Label();
             panel2 = new Panel();
-            menuStrip1.SuspendLayout();
+            menuStrip2 = new MenuStrip();
+            toolStripMenuItem1 = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripMenuItem();
+            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuItem4 = new ToolStripMenuItem();
+            toolStripMenuItem5 = new ToolStripMenuItem();
+            viewTransactionToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem6 = new ToolStripMenuItem();
+            toolStripMenuItem7 = new ToolStripMenuItem();
+            toolStripMenuItem8 = new ToolStripMenuItem();
+            adminToolStripMenuItem = new ToolStripMenuItem();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            menuStrip2.SuspendLayout();
             SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.AutoSize = false;
-            menuStrip1.Dock = DockStyle.None;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, logoutToolStripMenuItem });
-            menuStrip1.Location = new Point(0, -1);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1072, 36);
-            menuStrip1.TabIndex = 7;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // dashboardToolStripMenuItem
-            // 
-            dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
-            dashboardToolStripMenuItem.Size = new Size(76, 32);
-            dashboardToolStripMenuItem.Text = "Dashboard";
-            dashboardToolStripMenuItem.Click += dashboardToolStripMenuItem_Click;
-            // 
-            // buyToolStripMenuItem
-            // 
-            buyToolStripMenuItem.Name = "buyToolStripMenuItem";
-            buyToolStripMenuItem.Size = new Size(39, 32);
-            buyToolStripMenuItem.Text = "Buy";
-            buyToolStripMenuItem.Click += buyToolStripMenuItem_Click;
-            // 
-            // sellToolStripMenuItem
-            // 
-            sellToolStripMenuItem.Name = "sellToolStripMenuItem";
-            sellToolStripMenuItem.Size = new Size(37, 32);
-            sellToolStripMenuItem.Text = "Sell";
-            sellToolStripMenuItem.Click += sellToolStripMenuItem_Click;
-            // 
-            // sendToolStripMenuItem
-            // 
-            sendToolStripMenuItem.Name = "sendToolStripMenuItem";
-            sendToolStripMenuItem.Size = new Size(45, 32);
-            sendToolStripMenuItem.Text = "Send";
-            sendToolStripMenuItem.Click += sendToolStripMenuItem_Click;
-            // 
-            // exchangeToolStripMenuItem
-            // 
-            exchangeToolStripMenuItem.Name = "exchangeToolStripMenuItem";
-            exchangeToolStripMenuItem.Size = new Size(70, 32);
-            exchangeToolStripMenuItem.Text = "Exchange";
-            exchangeToolStripMenuItem.Click += exchangeToolStripMenuItem_Click;
-            // 
-            // logoutToolStripMenuItem
-            // 
-            logoutToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { settingsToolStripMenuItem, logoutToolStripMenuItem1 });
-            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(64, 32);
-            logoutToolStripMenuItem.Text = "Account";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(180, 22);
-            settingsToolStripMenuItem.Text = "Settings";
-            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
-            // 
-            // logoutToolStripMenuItem1
-            // 
-            logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            logoutToolStripMenuItem1.Size = new Size(180, 22);
-            logoutToolStripMenuItem1.Text = "Logout";
-            logoutToolStripMenuItem1.Click += logoutToolStripMenuItem1_Click;
             // 
             // panel1
             // 
+            panel1.BackColor = SystemColors.Window;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(btnSend);
             panel1.Controls.Add(txtAmount);
@@ -135,7 +71,7 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(193, 100);
+            panel1.Location = new Point(193, 127);
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 376);
             panel1.TabIndex = 8;
@@ -214,27 +150,31 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(29, 63);
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(25, 63);
             label5.Name = "label5";
-            label5.Size = new Size(26, 15);
+            label5.Size = new Size(28, 15);
             label5.TabIndex = 10;
             label5.Text = "BTC";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(27, 103);
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(25, 104);
             label6.Name = "label6";
-            label6.Size = new Size(25, 15);
+            label6.Size = new Size(26, 15);
             label6.TabIndex = 11;
             label6.Text = "LTC";
+            label6.Click += label6_Click;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(27, 144);
+            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(25, 144);
             label7.Name = "label7";
-            label7.Size = new Size(28, 15);
+            label7.Size = new Size(29, 15);
             label7.TabIndex = 12;
             label7.Text = "ETH";
             // 
@@ -267,6 +207,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.Window;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label8);
             panel2.Controls.Add(label10);
@@ -275,41 +216,112 @@
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label7);
-            panel2.Location = new Point(629, 100);
+            panel2.Location = new Point(629, 127);
             panel2.Name = "panel2";
             panel2.Size = new Size(162, 198);
             panel2.TabIndex = 16;
+            // 
+            // menuStrip2
+            // 
+            menuStrip2.AutoSize = false;
+            menuStrip2.Dock = DockStyle.None;
+            menuStrip2.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4, toolStripMenuItem5, viewTransactionToolStripMenuItem, toolStripMenuItem6, adminToolStripMenuItem });
+            menuStrip2.Location = new Point(0, -2);
+            menuStrip2.Name = "menuStrip2";
+            menuStrip2.Size = new Size(1072, 36);
+            menuStrip2.TabIndex = 29;
+            menuStrip2.Text = "menuStrip2";
+            // 
+            // toolStripMenuItem1
+            // 
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(76, 32);
+            toolStripMenuItem1.Text = "Dashboard";
+            toolStripMenuItem1.Click += dashboardToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(39, 32);
+            toolStripMenuItem2.Text = "Buy";
+            toolStripMenuItem2.Click += buyToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem3
+            // 
+            toolStripMenuItem3.Name = "toolStripMenuItem3";
+            toolStripMenuItem3.Size = new Size(37, 32);
+            toolStripMenuItem3.Text = "Sell";
+            toolStripMenuItem3.Click += sellToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem4
+            // 
+            toolStripMenuItem4.Name = "toolStripMenuItem4";
+            toolStripMenuItem4.Size = new Size(45, 32);
+            toolStripMenuItem4.Text = "Send";
+            toolStripMenuItem4.Click += sendToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem5
+            // 
+            toolStripMenuItem5.Name = "toolStripMenuItem5";
+            toolStripMenuItem5.Size = new Size(70, 32);
+            toolStripMenuItem5.Text = "Exchange";
+            toolStripMenuItem5.Click += exchangeToolStripMenuItem_Click;
+            // 
+            // viewTransactionToolStripMenuItem
+            // 
+            viewTransactionToolStripMenuItem.Name = "viewTransactionToolStripMenuItem";
+            viewTransactionToolStripMenuItem.Size = new Size(107, 32);
+            viewTransactionToolStripMenuItem.Text = "View Transaction";
+            viewTransactionToolStripMenuItem.Click += viewTransactionsToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem6
+            // 
+            toolStripMenuItem6.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem7, toolStripMenuItem8 });
+            toolStripMenuItem6.Name = "toolStripMenuItem6";
+            toolStripMenuItem6.Size = new Size(64, 32);
+            toolStripMenuItem6.Text = "Account";
+            // 
+            // toolStripMenuItem7
+            // 
+            toolStripMenuItem7.Name = "toolStripMenuItem7";
+            toolStripMenuItem7.Size = new Size(116, 22);
+            toolStripMenuItem7.Text = "Settings";
+            toolStripMenuItem7.Click += settingsToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem8
+            // 
+            toolStripMenuItem8.Name = "toolStripMenuItem8";
+            toolStripMenuItem8.Size = new Size(116, 22);
+            toolStripMenuItem8.Text = "Logout";
+            toolStripMenuItem8.Click += logoutToolStripMenuItem1_Click;
+            // 
+            // adminToolStripMenuItem
+            // 
+            adminToolStripMenuItem.Name = "adminToolStripMenuItem";
+            adminToolStripMenuItem.Size = new Size(55, 32);
+            adminToolStripMenuItem.Text = "Admin";
+            adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
             // Send
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1072, 610);
+            Controls.Add(menuStrip2);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(menuStrip1);
             Name = "Send";
             Text = "Send";
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            menuStrip2.ResumeLayout(false);
+            menuStrip2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem dashboardToolStripMenuItem;
-        private ToolStripMenuItem buyToolStripMenuItem;
-        private ToolStripMenuItem sellToolStripMenuItem;
-        private ToolStripMenuItem sendToolStripMenuItem;
-        private ToolStripMenuItem exchangeToolStripMenuItem;
-        private ToolStripMenuItem logoutToolStripMenuItem;
-        private ToolStripMenuItem settingsToolStripMenuItem;
-        private ToolStripMenuItem logoutToolStripMenuItem1;
         private Panel panel1;
         private ComboBox comboBox1;
         private Label label1;
@@ -326,5 +338,16 @@
         private Label label9;
         private Label label10;
         private Panel panel2;
+        private MenuStrip menuStrip2;
+        private ToolStripMenuItem toolStripMenuItem1;
+        private ToolStripMenuItem toolStripMenuItem2;
+        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuItem4;
+        private ToolStripMenuItem toolStripMenuItem5;
+        private ToolStripMenuItem viewTransactionToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem6;
+        private ToolStripMenuItem toolStripMenuItem7;
+        private ToolStripMenuItem toolStripMenuItem8;
+        private ToolStripMenuItem adminToolStripMenuItem;
     }
 }

@@ -23,6 +23,8 @@ namespace cryptonance.screens
             wallet.GetWalletBalance();
             wallet.GetCryptos();
 
+            lblUsername.Text = AppState.CurrentUser.username;
+
             lblBtcBalance.Text = AppState.Wallet.btc.ToString();
             lvlLtcBalance.Text = AppState.Wallet.ltc.ToString();
             lvlEthBalance.Text = AppState.Wallet.eth.ToString();
@@ -86,6 +88,18 @@ namespace cryptonance.screens
             Transactions tra = new Transactions();
             tra.Show();
             this.Hide();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
+        }
+
+        private void lvlLtcUsd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

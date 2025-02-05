@@ -27,6 +27,19 @@ namespace cryptonance.screens
             txtPassword.Text = AppState.CurrentUser.password;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(txtPassword.Text == "" || txtUserName.Text == "")
+            {
+                MessageBox.Show("Please fill in all fields");
+                return;
+            }
+
+            Profile profile = new Profile();
+            profile.UpdateProfile(txtUserName.Text, txtPassword.Text);
+            MessageBox.Show("Profile updated successfully");
+        }
+
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
@@ -48,6 +61,13 @@ namespace cryptonance.screens
             this.Hide();
         }
 
+        private void sendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Send send = new Send();
+            send.Show();
+            this.Hide();
+        }
+
         private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exchange exchange = new Exchange();
@@ -55,17 +75,32 @@ namespace cryptonance.screens
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void viewTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(txtPassword.Text == "" || txtUserName.Text == "")
-            {
-                MessageBox.Show("Please fill in all fields");
-                return;
-            }
+            Transactions transactions = new Transactions();
+            transactions.Show();
+            this.Hide();
+        }
 
-            Profile profile = new Profile();
-            profile.UpdateProfile(txtUserName.Text, txtPassword.Text);
-            MessageBox.Show("Profile updated successfully");
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+            this.Hide();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
         }
     }
 }

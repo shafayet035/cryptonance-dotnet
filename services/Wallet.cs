@@ -23,6 +23,7 @@ namespace cryptonance.services
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@user_id", AppState.CurrentUser.id);
                     SqlDataReader reader = command.ExecuteReader();
+                    
                     if (reader.HasRows)
                     {
                         while (reader.Read())
@@ -56,6 +57,9 @@ namespace cryptonance.services
                     string query = "SELECT * FROM [currency]";
                     SqlCommand command = new SqlCommand(query, connection);
                     SqlDataReader reader = command.ExecuteReader();
+
+                    AppState.Cryptos.Clear();
+
                     if (reader.HasRows)
                     {
                         while (reader.Read())

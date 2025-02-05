@@ -58,9 +58,46 @@ namespace cryptonance.screens
             this.Hide();
         }
 
+        private void sendToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Send send = new Send();
+            send.Show();
+            this.Hide();
+        }
+
         private void exchangeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Exchange exchange = new Exchange();
+            exchange.Show();
+            this.Hide();
+        }
 
+        private void viewTransactionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Show();
+            this.Hide();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+            this.Hide();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
+        }
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin admin = new Admin();
+            admin.Show();
+            this.Hide();
         }
 
         private void Exchange_Load(object sender, EventArgs e)
@@ -145,13 +182,6 @@ namespace cryptonance.screens
             amountbox.Text = "";
         }
 
-        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Settings stg = new Settings();
-            stg.Show();
-            this.Hide();
-        }
-
         private void UpdateExchangeText()
         {
             if (this.frombox.SelectedIndex >= 0 && this.tobox.SelectedIndex >= 0 && amountbox.Text != "")
@@ -184,6 +214,11 @@ namespace cryptonance.screens
         private void frombox_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.UpdateExchangeText();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -24,6 +24,7 @@ namespace cryptonance.services
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@user_id", AppState.CurrentUser.id);
                     SqlDataReader reader = command.ExecuteReader();
+                    AppState.Transactions.Clear();
                     if (reader.HasRows)
                     {
                         while (reader.Read())

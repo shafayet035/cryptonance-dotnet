@@ -1,6 +1,6 @@
 ﻿namespace cryptonance.screens
 {
-    partial class Transactions
+    partial class Admin
     {
         /// <summary>
         /// Required designer variable.
@@ -39,10 +39,23 @@
             settingsToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem1 = new ToolStripMenuItem();
             adminToolStripMenuItem = new ToolStripMenuItem();
-            dataGridView1 = new DataGridView();
             label1 = new Label();
+            dataGridView1 = new DataGridView();
+            label2 = new Label();
+            txtBuyingRate = new TextBox();
+            label3 = new Label();
+            txtSellingRate = new TextBox();
+            button1 = new Button();
+            label4 = new Label();
+            dataGridView2 = new DataGridView();
+            label5 = new Label();
+            txtUsername = new TextBox();
+            label6 = new Label();
+            txtPassword = new TextBox();
+            button2 = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -50,9 +63,9 @@
             menuStrip1.AutoSize = false;
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.Items.AddRange(new ToolStripItem[] { dashboardToolStripMenuItem, buyToolStripMenuItem, sellToolStripMenuItem, sendToolStripMenuItem, exchangeToolStripMenuItem, viewTransactionsToolStripMenuItem, logoutToolStripMenuItem, adminToolStripMenuItem });
-            menuStrip1.Location = new Point(-5, -1);
+            menuStrip1.Location = new Point(-1, -1);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1079, 36);
+            menuStrip1.Size = new Size(1073, 36);
             menuStrip1.TabIndex = 7;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -126,36 +139,152 @@
             adminToolStripMenuItem.Text = "Admin";
             adminToolStripMenuItem.Click += adminToolStripMenuItem_Click;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(33, 124);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1002, 341);
-            dataGridView1.TabIndex = 8;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 80);
+            label1.Location = new Point(44, 97);
             label1.Name = "label1";
-            label1.Size = new Size(89, 15);
-            label1.TabIndex = 9;
-            label1.Text = "All Transactions";
+            label1.Size = new Size(113, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Update Crypto Price";
             // 
-            // Transactions
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(44, 130);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(443, 164);
+            dataGridView1.TabIndex = 9;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(44, 320);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 15);
+            label2.TabIndex = 10;
+            label2.Text = "Buying Rate";
+            // 
+            // txtBuyingRate
+            // 
+            txtBuyingRate.Location = new Point(44, 341);
+            txtBuyingRate.Name = "txtBuyingRate";
+            txtBuyingRate.Size = new Size(229, 23);
+            txtBuyingRate.TabIndex = 11;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(44, 377);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 15);
+            label3.TabIndex = 12;
+            label3.Text = "Selling Rate";
+            // 
+            // txtSellingRate
+            // 
+            txtSellingRate.Location = new Point(44, 395);
+            txtSellingRate.Name = "txtSellingRate";
+            txtSellingRate.Size = new Size(229, 23);
+            txtSellingRate.TabIndex = 13;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(44, 436);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 14;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(549, 97);
+            label4.Name = "label4";
+            label4.Size = new Size(94, 15);
+            label4.TabIndex = 15;
+            label4.Text = "Update user info";
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(549, 130);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.Size = new Size(398, 164);
+            dataGridView2.TabIndex = 16;
+            dataGridView2.CellClick += dataGridView2_CellClick;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(549, 320);
+            label5.Name = "label5";
+            label5.Size = new Size(100, 15);
+            label5.TabIndex = 17;
+            label5.Text = "Update username";
+            // 
+            // txtUsername
+            // 
+            txtUsername.Location = new Point(549, 341);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(229, 23);
+            txtUsername.TabIndex = 18;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(549, 377);
+            label6.Name = "label6";
+            label6.Size = new Size(98, 15);
+            label6.TabIndex = 19;
+            label6.Text = "Update password";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(549, 395);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(229, 23);
+            txtPassword.TabIndex = 20;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(549, 436);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 21;
+            button2.Text = "Update";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // Admin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1072, 610);
-            Controls.Add(label1);
+            Controls.Add(button2);
+            Controls.Add(txtPassword);
+            Controls.Add(label6);
+            Controls.Add(txtUsername);
+            Controls.Add(label5);
+            Controls.Add(dataGridView2);
+            Controls.Add(label4);
+            Controls.Add(button1);
+            Controls.Add(txtSellingRate);
+            Controls.Add(label3);
+            Controls.Add(txtBuyingRate);
+            Controls.Add(label2);
             Controls.Add(dataGridView1);
+            Controls.Add(label1);
             Controls.Add(menuStrip1);
-            Name = "Transactions";
-            Text = "Transactions";
+            Name = "Admin";
+            Text = "Admin";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -173,7 +302,19 @@
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem1;
         private ToolStripMenuItem adminToolStripMenuItem;
-        private DataGridView dataGridView1;
         private Label label1;
+        private DataGridView dataGridView1;
+        private Label label2;
+        private TextBox txtBuyingRate;
+        private Label label3;
+        private TextBox txtSellingRate;
+        private Button button1;
+        private Label label4;
+        private DataGridView dataGridView2;
+        private Label label5;
+        private TextBox txtUsername;
+        private Label label6;
+        private TextBox txtPassword;
+        private Button button2;
     }
 }

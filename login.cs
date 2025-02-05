@@ -44,5 +44,10 @@ namespace cryptonance
             this.Hide();
             this.ResumeLayout();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
